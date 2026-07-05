@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Telemetric Ground water Monitoring</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="assets/img/fav.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+    	<link rel="stylesheet" type="text/css" href="assets/css/Ground.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/css/Login201.css">
+<!--===============================================================================================-->
+<style>
+ body{
+	margin: 0;
+	padding: 0;
+background: linear-gradient(to right, rgb(7, 24, 34), rgb(14, 63, 96), rgb(52, 96, 129), rgb(33, 113, 160), rgb(11, 145, 226), rgb(9, 224, 238));
+	overflow-x:hidden;
+	overflow-y:hidden;
+    width: 100%;
+    background-size: cover;
+   
+}
+.main-wrapper{width: 100%;
+    background-size: cover;
+    background-image: url('tgwm-bg.png');
+    height: 100vh;
+}
+/*waves****************************/
+
+
+.box {
+	position: fixed;
+	top: 0;
+	transform: rotate(80deg);
+	left: 0;
+}
+
+.wave {
+	position: fixed;
+	top: 0;
+	left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  background: #0af;
+  width: 1500px;
+  height: 1300px;
+  margin-left: -150px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 7000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 7500ms infinite linear;
+	position: fixed;
+	background-color: #77daff;
+}
+
+.wave.-two {
+  animation: drift 3000ms infinite linear;
+  opacity: .1;
+  background: black;
+	position: fixed;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+/*LOADING SPACE*/
+
+.contain {
+	animation-delay: 4s;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  background: #25a7d7;
+  background: -webkit-linear-gradient(#25a7d7, #2962FF);
+  background: linear-gradient(#25a7d7, #25a7d7);
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+/*Animation*/
+.icon:nth-child(2) img {-webkit-animation-delay: 0.2s;animation-delay: 0.2s}
+.icon:nth-child(3) img {-webkit-animation-delay: 0.3s;animation-delay: 0.3s}
+.icon:nth-child(4) img {-webkit-animation-delay: 0.4s;animation-delay: 0.4s}
+
+.icon img {
+  -webkit-animation: anim 2s ease infinite;
+  animation: anim 2s ease infinite;
+  -webkit-transform: scale(0,0) rotateZ(180deg);
+  transform: scale(0,0) rotateZ(180deg);
+}
+
+@-webkit-keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+@keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}  
+    
+    .tittle-grp{top: 36%;
+    position: absolute;
+    width: 173px;
+    left: 6%;
+    font-size: 41px;
+    font-weight: 800;
+    font-family: oswald;
+    color: white;
+    padding: 10px;
+    border-left: 1px solid #fff;
+    text-shadow: 2px 2px #0000005c;
+    }
+</style>
+
+
+</head>
+<body>	
+<div class='box'>
+  <div class='wave -one'></div>
+  <div class='wave -two'></div>
+  <div class='wave -three'></div>
+</div>
+<!--===============================================================================================-->
+<div class="main-wrapper">
+<!--===============================================================================================-->
+<div id="pg-anim-bg"></div>
+<!--===============================================================================================-->
+<div class="wrapper">
+<header class="topbar">
+ <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                            
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+                          <img src="assets/img/lg1.svg" alt="#"> </b>
+                   
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+
+                        
+                        <li class="nav-item hidden-sm-down"></li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                        <li class="nav-item hidden-xs-down logo-dm"> 
+                             <img src="assets/img/lg2.svg" alt="#">
+                        </li>
+                        
+                        <!-- ============================================================== -->
+                        
+                    </ul>
+                </div>
+            </nav>
+</header>
+<!--===============================================================================================-->
+<div class="page-wrapper hov-pointer">
+
+<h1 class="tittle-grp">SMART TELEMETRIC GROUND WATER MONITORING</h1>
+<!--===============================================================================================-->
+<div class="container-fluid">
+<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						 <img src="assets/img/exlogin.svg" alt="#" style="height:100px;">
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" onclick="demo.showNotification('top','right')">
+								Login
+							</button>
+						</div>
+					</div>
+
+					
+				</form>
+			</div>
+		</div> 
+</div>
+
+</div>
+<!--============================Container===================================================================-->
+</div>
+<!--=============================page wrapper==================================================================-->
+</div>
+    <span class="abt_tems" style="z-index: 333;color: #000;">Powered by<img src="assets/img/logo.png"></span>
+<!--=====================================wrapper==========================================================-->
+</div>
+<!--==========================main wrapper=====================================================================-->	
+	<script src="assets/js/jquery.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<!--windcompass-->
+    <script src="assets/js/bootstrap-notify.js"></script>
+<!--===============================================================================================-->
+    <script src="assets/js/Demolog.js"></script>
+     <script src="assets/js/media.js"></script>
+ 
+</body>
+</html>

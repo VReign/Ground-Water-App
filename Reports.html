@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/animate/animate.css">
+<!--===============================================================================================-->	
+    	<link rel="stylesheet" type="text/css" href="assets/css/Ground.css">
+     	<link rel="stylesheet" type="text/css" href="    
+https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css">
+     
+
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+<style>
+   
+</style>
+
+
+</head>
+<body class="inner-show">	
+<!--===============================================================================================-->
+<div class="main-wrapper">
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+<div class="wrapper">
+<header class="topbar in-page-bg">
+ <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                   
+                    <a class="navbar-brand f-w-im fs-26" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bars"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right sideleft-panelA animated slideInLeft">
+                              <ul class="sidepanel-item">                              <li>                                  <div class="clock"><div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>                                                                    </div>                                   <span id="currdate"></span>                                 </li>                               <li>                                    <a class="sideli-lst" href="index.html"><span><i class="fa fa-tachometer" aria-hidden="true"></i></span>Dashboard</a>                               </li>                              <li>                                   <a class="sideli-lst" href="Statistics.html"><span><i class="fa fa-area-chart" aria-hidden="true"></i></span>Statistics </a>                              </li>                                  <li>                                   <a class="sideli-lst" href="Reports.html"><span><i class="fa fa-file-text-o" aria-hidden="true"></i></span>Reports </a>                              </li>                              </ul>  	
+                            </div>
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+                          <span class="logo-head f-w-im fs-30">TGWM</span> </b>
+                   
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+
+                        
+                        <li class="nav-item hidden-sm-down"></li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                         <li class="nav-item hidden-xs-down"> 
+                            
+                        </li>
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark f-w-im fs-26" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle-o"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                	<div id="splogin_form" style="">
+<form class="sp-form-panel" autocomplete="off">
+
+					
+
+					<div class="sp-form-controls">
+						<input class="form-search" type="text" name="email" placeholder="Username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="sp-form-controls">
+					
+						<input class="form-search" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="sp-form-controls-btn">
+						<button class="btn btn-primary sp-btn-log">
+							Login
+						</button>
+                        <button class="btn btn-secondary sp-btn-can sp-right">
+							Cancel
+						</button>
+					</div>
+					
+				
+					
+				</form>
+
+                            
+                            
+                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+</header>
+<!--===============================================================================================-->
+<div class="page-wrapper">
+<!--===============================================================================================-->
+<div class="container-fluid tb-view">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+<h1>Reports</h1>
+  </li>
+
+    </ul>  
+       
+
+<div class="row">
+      <div class="col-xl-12 col-md-12">
+             <div class="">
+
+<div class="card card-chart   ">
+    <div class="card-header">
+          
+          <p class="card-title">Advance filtering</p>
+        </div>
+      <div class="card-body gray">
+          <div class="row">
+          <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="fs-14">From Date</label>
+                                                    <input type="text" class="form-control datepicker">
+                                                </div>
+                                            </div>
+        <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="fs-14">To Date</label>
+                                                    <input type="text" class="form-control datepicker1">
+                                                </div>
+                                            </div>
+        <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="fs-14">Parameters</label>
+                                                   <select class="form-control custom-select selectpicker" multiple data-live-search="true">
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Relish</option>
+</select>
+                                                </div>
+                                            </div>
+        <div class="col-md-4">
+            <div class="button-grid">
+            <button class="btn btn-primary sp-btn-log">
+							APPLY
+						</button>
+            <button class="btn btn-secondary sp-btn-log">
+							CLEAR
+						</button>
+            
+            </div>
+            </div>
+        </div>
+        </div>
+    
+</div>
+
+  </div>
+    
+   
+                                        <div class="">
+
+<div class="card card-chart">
+    <div class="card-header">
+          <div class="d-flex no-block">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Meterology table</h4>
+                                        <p class="card-subtitle">Generate report for meterology parameters</p></div>
+                   <p class="ml-auto p-r-10 "  data-toggle="modal" data-target="#mymodal">
+  <i class="fa fa-cogs"></i>
+  </p>  
+                                    
+                                </div>
+          
+        </div>
+      <div class="card-body">
+           <div class="table-responsive">
+         <table id="metdatatble" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+            </tr>
+            <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+            </tr>
+            <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+            </tr>
+            <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                <td>$137,500</td>
+            </tr>
+            <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                <td>$327,900</td>
+            </tr>
+            <tr>
+                <td>Colleen Hurst</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>2009/09/15</td>
+                <td>$205,500</td>
+            </tr>
+            <tr>
+                <td>Sonya Frost</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>2008/12/13</td>
+                <td>$103,600</td>
+            </tr>
+   
+        </tbody>
+       
+    </table>
+               </div>
+        </div>
+    
+</div>
+
+  </div>
+    </div> </div> 
+  </div>
+
+<!--============================Container===================================================================-->
+
+</div>
+
+<!--=============================page wrapper==================================================================-->
+</div>
+<!--=====================================wrapper==========================================================-->
+
+ <
+</div>
+
+</div>
+<!--==========================main wrapper=====================================================================-->	
+	<script src="assets/js/jquery.min.js"></script>
+    	<script type="text/javascript" src="assets/js/moment.min.js"></script>
+
+     <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<!--===============================================================================================-->
+<!--data table-->
+<script src="assets/vendor/Datatable/jquery.dataTables.min.js"></script>    
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+      <script src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.colVis.min.js"></script>
+<!--===============================================================================================-->
+    <!--======================================bt=========================================================-->
+    
+    <!--===============================================================================================-->
+   
+
+<script>
+$(document).ready(function() {
+    $('select').selectpicker();
+    $('#metdatatble').DataTable( {
+        dom: 'Bfrtip',
+    
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 5 ]
+                }
+            },
+            'colvis'
+        ]
+    } );
+    } );
+</script>
+
+</body>
+</html>

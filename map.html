@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Leaflet Map</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <style>
+
+        #map {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+
+    <script>
+   	    var stations = [{"title":"Deira Union Square","latitude":"25.267560","longitude":"55.313135","description":"DM-Records Management Unit (DM-Clinic)","GIS_Monitors":["NO2","CO","NO","SO2","O3","PM10","Temp","RH"],"LatestDate":"13 Jun  2019 11:00:00","monitors":[{"name":"NO2","value":"0.03","pollutantval":"[ppm]","aqival":"7"},{"name":"CO","value":"0.39","pollutantval":"[ppm]","aqival":"1"},{"name":"NO","value":"0.04","pollutantval":"[ppm]","aqival":0},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.03","pollutantval":"[ppm]","aqival":"15"},{"name":"PM10","value":"312.97","pollutantval":"[ug/m3, ug/m3]","aqival":0}],"aqistationvalue":0,"colorcode":"green"}, {"title":"Karama","latitude":"25.2506666","longitude":"55.3067333","description":"Zabeel School, Karama","GIS_Monitors":["NO2","CO","SO2","PM10","Temp","RH","O3","NO"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.05","pollutantval":"[ppm]","aqival":"12"},{"name":"CO","value":"0.34","pollutantval":"[ppm]","aqival":"1"},{"name":"SO2","value":"0.01","pollutantval":"[ppm]","aqival":"4"},{"name":"PM10","value":"281.98","pollutantval":"[ug/m3]","aqival":0},{"name":"O3","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"NO","value":"0.03","pollutantval":"[ppm]","aqival":0}],"aqistationvalue":12,"colorcode":"green"}, {"title":"Jebel Ali Free Zone","latitude":"25.0074833","longitude":"55.0846416","description":"Trakhees Office - Jebel Ali Port","GIS_Monitors":["NO2","CO","SO2","Temp","RH","Wind Speed","Wind Dir","Solar Rad","NO","O3"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.05","pollutantval":"[ppm]","aqival":"12"},{"name":"CO","value":"0.4","pollutantval":"[ppm]","aqival":"1"},{"name":"SO2","value":"0.01","pollutantval":"[ppm]","aqival":"4"},{"name":"Temp","value":"40.28","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"31.14","pollutantval":"[%]","aqival":0},{"name":"Wind Speed","value":"2.5","pollutantval":"[m/s]","aqival":0},{"name":"Wind Dir","value":"272.3","pollutantval":"[Deg]","aqival":0},{"name":"NO","value":"0.02","pollutantval":"[ppm]","aqival":0},{"name":"O3","value":"0.02","pollutantval":"[ppm]","aqival":"10"}],"aqistationvalue":12,"colorcode":"green"}, {"title":"Mushrif Park","latitude":"25.219969","longitude":"55.457060","description":"Mushrif Park","GIS_Monitors":["NO2","O3","Temp","RH","Wind Speed","Wind Dir","Solar Rad","NO","CO","SO2"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.04","pollutantval":"[ppm]","aqival":"20"},{"name":"Temp","value":"44.54","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"12.28","pollutantval":"[%]","aqival":0},{"name":"Wind Speed","value":"2.7","pollutantval":"[m/s]","aqival":0},{"name":"Wind Dir","value":"210.51","pollutantval":"[Deg]","aqival":0},{"name":"NO","value":"0","pollutantval":"[ppm]","aqival":0},{"name":"CO","value":"0.09","pollutantval":"[ppm]","aqival":"0"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"}],"aqistationvalue":20,"colorcode":"green"}, {"title":"Zabeel Park","latitude":"25.236270","longitude":"55.298573","description":"Gate 3 - Zabeel Park","GIS_Monitors":["NO2","CO","NO","O3","SO2","Temp","RH","Wind Speed","Wind Dir","Solar Rad"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.03","pollutantval":"[ppm]","aqival":"7"},{"name":"CO","value":"0.37","pollutantval":"[ppm]","aqival":"1"},{"name":"NO","value":"0.01","pollutantval":"[ppm]","aqival":0},{"name":"O3","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"Temp","value":"40.58","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"21.15","pollutantval":"[%]","aqival":0},{"name":"Wind Speed","value":"2.24","pollutantval":"[m/s]","aqival":0},{"name":"Wind Dir","value":"308.59","pollutantval":"[Deg]","aqival":0},{"name":"Solar Rad","value":"998.23","pollutantval":"[w/m2]","aqival":0}],"aqistationvalue":7,"colorcode":"green"}, {"title":"Warsan","latitude":"25.156636","longitude":"55.425671","description":"DM-Irrigation Network Depertment Office, Warsan Se","GIS_Monitors":["NO2","O3","SO2","NO","Temp","RH","Wind Speed","Wind Dir","Solar Rad"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.03","pollutantval":"[ppm]","aqival":"15"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"NO","value":"0","pollutantval":"[ppm]","aqival":0},{"name":"Temp","value":"44.38","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"11.99","pollutantval":"[%]","aqival":0},{"name":"Wind Speed","value":"1.42","pollutantval":"[m/s]","aqival":0},{"name":"Wind Dir","value":"200.38","pollutantval":"[Deg]","aqival":0},{"name":"Solar Rad","value":"1200.03","pollutantval":"[w/m2]","aqival":0}],"aqistationvalue":15,"colorcode":"green"}, {"title":"Emirates Hills","latitude":"25.0765500","longitude":"55.1656166","description":"Hattan Garden Nursery - Al Thanyah Third","GIS_Monitors":["NO2","CO","O3","SO2","PM10","Temp","RH"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.03","pollutantval":"[ppm]","aqival":"7"},{"name":"CO","value":"0.25","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.01","pollutantval":"[ppm]","aqival":"5"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"PM10","value":"269","pollutantval":"[ug/m3, mg/m3]","aqival":0}],"aqistationvalue":0,"colorcode":"green"}, {"title":"Jebel Ali Village","latitude":"25.029126","longitude":"55.112914","description":"Al Muntazah Complex - Jebel Ali Village","GIS_Monitors":["NO2","CO","O3","SO2","Temp","RH","NO"],"LatestDate":"13 Jun  2019 11:00:00","monitors":[{"name":"NO2","value":"0.02","pollutantval":"[ppm]","aqival":"5"},{"name":"CO","value":"0.17","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.03","pollutantval":"[ppm]","aqival":"15"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"Temp","value":"41.37","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"25.06","pollutantval":"[%]","aqival":0},{"name":"NO","value":"0.01","pollutantval":"[ppm]","aqival":0}],"aqistationvalue":15,"colorcode":"green"}, {"title":"Dubai Airport","latitude":"25.247264","longitude":"55.386303","description":"Al Twar Third - Airport Tunnel","GIS_Monitors":["NO2","CO","SO2","Temp","RH","O3"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.03","pollutantval":"[ppm]","aqival":"7"},{"name":"CO","value":"0.26","pollutantval":"[ppm]","aqival":"0"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.02","pollutantval":"[ppm]","aqival":"10"}],"aqistationvalue":10,"colorcode":"green"}, {"title":"Hatta","latitude":"24.817594","longitude":"56.131834","description":"DM Office - Hatta ","GIS_Monitors":["NO2","O3","Temp","RH","Wind Speed","Wind Dir","Solar Rad","NO","CO"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.01","pollutantval":"[ppm]","aqival":"2"},{"name":"O3","value":"0.04","pollutantval":"[ppm]","aqival":"20"},{"name":"Temp","value":"41.78","pollutantval":"[C\u00b0]","aqival":0},{"name":"RH","value":"8.9","pollutantval":"[%]","aqival":0},{"name":"Wind Speed","value":"4.67","pollutantval":"[m/s]","aqival":0},{"name":"Wind Dir","value":"42.9","pollutantval":"[Deg]","aqival":0},{"name":"NO","value":"0","pollutantval":"[ppm]","aqival":0},{"name":"CO","value":"0.22","pollutantval":"[ppm]","aqival":"0"}],"aqistationvalue":20,"colorcode":"green"}, {"title":"Sheikh Zayed Road","latitude":"25.1563661","longitude":"55.2274583","description":"DM- Al Manara Office, Al Safa Second","GIS_Monitors":["NO2","CO","SO2","PM10","Temp","RH"],"LatestDate":"13 Jun  2019 12:00:00","monitors":[{"name":"NO2","value":"0.01","pollutantval":"[ppm]","aqival":"2"},{"name":"CO","value":"0.23","pollutantval":"[ppm]","aqival":"0"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"PM10","value":"225","pollutantval":"[ug/m3, ug/m3]","aqival":0}],"aqistationvalue":0,"colorcode":"green"}, {"title":"Shk. Mohd. Bin Zayed Road","latitude":"25.05773","longitude":"55.27089","description":"Arabian Ranches, Wadi Al Safa Sixth","GIS_Monitors":["NO2","CO","SO2","Temp","RH","O3","NO"],"LatestDate":"13 Jun  2019 11:00:00","monitors":[{"name":"NO2","value":"0.01","pollutantval":"[ppm]","aqival":"2"},{"name":"CO","value":"0.22","pollutantval":"[ppm]","aqival":"0"},{"name":"SO2","value":"0","pollutantval":"[ppm]","aqival":"0"},{"name":"O3","value":"0.02","pollutantval":"[ppm]","aqival":"10"},{"name":"NO","value":"0","pollutantval":"[ppm]","aqival":0}],"aqistationvalue":10,"colorcode":"green"}];
+
+        var leafletMap = L.map('map').setView([25, 55], 9);
+
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>'
+        }).addTo(leafletMap);
+
+        for(i=0;i<stations.length;i++){
+        	var icon = L.icon({
+    			iconUrl : "assets/img/drp.svg",
+    			iconSize : [ 15, 15 ]
+    		});
+        	var marker = L.marker(new L.LatLng(
+    				Number(stations[i].latitude),
+    				Number(stations[i].longitude)), {
+        		icon : icon,
+    			title : stations[i].title
+    		}).addTo(leafletMap);
+        }
+    </script>
+</body>
+</html>
+
+
+
+

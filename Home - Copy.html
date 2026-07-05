@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Telemetric Ground water Monitoring</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/animate/animate.css">
+<!--===============================================================================================-->	
+    	<link rel="stylesheet" type="text/css" href="assets/css/Ground.css">
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+<style>
+    .wq-drop-layer{width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 99999;
+    top: 20%;
+    left: 20%;
+    
+    }
+    svg path {
+  fill: #03a9f4;
+}
+  .wq-drop-layer span{font-weight: 700;
+    color: white;}
+</style>
+
+
+</head>
+<body style="background-color: #67757c;">	
+
+</div>
+<!--===============================================================================================-->
+<div class="main-wrapper">
+<!--===============================================================================================-->
+<header class="topbar z-topbar">
+ <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+     <div class="navbar-header">
+                   
+                    <a class="navbar-brand f-w-im fs-26" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bars"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right sideleft-panelA animated slideInLeft">
+                              <ul class="sidepanel-item">                              <li>                                  <div class="clock"><div class="hand hour"></div><div class="hand minute"></div><div class="hand second"></div>                                                                    </div>                                   <span id="currdate"></span>                                 </li>                               <li>                                    <a class="sideli-lst" href="index.html"><span><i class="fa fa-tachometer" aria-hidden="true"></i></span>Dashboard</a>                               </li>                              <li>                                   <a class="sideli-lst" href="Statistics.html"><span><i class="fa fa-area-chart" aria-hidden="true"></i></span>Statistics </a>                              </li>                                  <li>                                   <a class="sideli-lst" href="Reports.html"><span><i class="fa fa-file-text-o" aria-hidden="true"></i></span>Reports </a>                              </li>                              </ul>  	
+                            </div>
+                 
+                </div>
+                <div class="navbar-header">
+                     
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+                           <img src="assets/img/lg1.svg" alt="#">  </b>
+                   
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+
+                        
+                        <li class="nav-item hidden-sm-down"></li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                        <li class="nav-item hidden-xs-down logo-dm"> 
+                             <img src="assets/img/lg2.svg" alt="#">
+                        </li>
+                         
+                        <!-- ============================================================== -->
+                        
+                        <li class="nav-item"> 
+                            <a class="nav-link f-w-im fs-26" >
+                                <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+</header><!--===============================================================================================-->
+<div class="map-over-layer">
+    <div class="toggle-filters">
+        <ul class="toggle-list-items">
+        <li><span>text center</span>
+        <label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+        </li>
+            <li><span>text midle</span>
+            <label class="switch">
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label>
+            </li>
+            <li><span>text align middle</span>
+            <label class="switch">
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label></li>
+            <li><span>text align middle</span>
+            <label class="switch">
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label></li>
+        </ul>
+    </div>
+    <div class="zone-filter">
+    <span>zone level</span>
+        <ul class="zone-lv-o">
+        <li><a href="#">A</a></li>
+             <li><a href="#">B</a></li>
+             <li><a href="#">C</a></li>
+             <li><a href="#">D</a></li> <li><a href="#">H</a></li>
+           
+        </ul>
+
+    </div>
+
+<div class="water-level">
+<div class="rangeslider-wrap">zzzzzzzzjz
+  <input type="range" min="0" max="150" value="150" step="10" labels="0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150">
+     <input type="range" min="0" max="150" value="150" step="10" labels="0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150">
+</div>
+</div>
+</div>
+<div class="wq-drop-layer animated zoomIn" style="">
+   
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 100 100">
+
+  <path d="M49.015,0.803
+    c-0.133-1.071-1.896-1.071-2.029,0
+    C42.57,36.344,20,43.666,20,68.367   
+    C20,83.627,32.816,96,48,96
+    s28-12.373,28-27.633
+    C76,43.666,53.43,36.344,49.015,0.803z 
+    M44.751,40.09   
+    c-0.297,1.095-0.615,2.223-0.942,3.386
+    c-2.007,7.123-4.281,15.195-4.281,24.537
+    c0,5.055-2.988,6.854-5.784,6.854   
+    c-3.189,0-5.782-2.616-5.782-5.831
+    c0-11.034,5.315-18.243,10.005-24.604
+    c1.469-1.991,2.855-3.873,3.983-5.749   
+    c0.516-0.856,1.903-0.82,2.533,0.029
+    C44.781,39.116,44.879,39.619,44.751,40.09z"/>
+
+
+</svg>
+ <span>120M</span>
+</div>
+<div class="layer-drop">
+<span class="wq-level">
+    <h4>station Name</h4>
+
+</span>
+<ul class="ul-layer-drop">
+<li><img src="assets\img\hot.svg" alt="#"><a href="#">Statistics</a><span>60</span></li>
+    <li><img src="assets\img\hot.svg" alt="#"><a href="#"></i>Statistics</a><span>20</span></li>
+    <li><img src="assets\img\hot.svg" alt="#"><a href="#">Statistics</a><span>30</span></li>
+</ul>
+<span class="info-more">More Details</span>
+</div>
+<div class="layer-static" style="display:none;">
+    <span class="ext-layer"><i class=" fa fa-close"></i></span>
+      <div class="chart-area" id="xx"  style="min-height: 300px">
+            <canvas id="tmp-graph1"></canvas>
+          </div>
+
+</div>
+<div class="wrapper daylight-map"  style="overflow: hidden;" id="googleMap">
+
+<!--===============================================================================================-->
+    
+<!--============================Container===================================================================-->
+</div>
+<!--=============================page wrapper==================================================================-->
+
+</div>
+<!--=====================================wrapper==========================================================-->
+
+<!--==========================main wrapper=====================================================================-->	
+	<script src="assets/js/jquery.min.js"></script>
+
+
+	<script src="assets/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+
+	<script src="assets/vendor/water/water.min.js"></script>
+    <script src="assets/js/chartjs.min.js"></script><!--======================================bt=========================================================-->
+    <script src="assets/js/demojs.js"></script>
+    <!--===============================================================================================-->
+   
+
+<script>
+$('input[type="range"]').rangeslider({
+  // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: false,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {
+      $rangeEl = this.$range;
+      // add value label to handle
+      var $handle = $rangeEl.find('.rangeslider__handle');
+      var handleValue = '<div class="rangeslider__handle__value">' + this.value + '</div>';
+      $handle.append(handleValue);
+      
+      // get range index labels 
+      var rangeLabels = this.$element.attr('labels');
+      rangeLabels = rangeLabels.split(', ');
+      
+      // add labels
+      $rangeEl.append('<div class="rangeslider__labels"></div>');
+      $(rangeLabels).each(function(index, value) {
+        $rangeEl.find('.rangeslider__labels').append('<span class="rangeslider__labels__label">' + value + '</span>');
+      })
+    },
+
+    // Callback function
+    onSlide: function(position, value) {
+      var $handle = this.$range.find('.rangeslider__handle__value');
+      $handle.text(this.value);
+    },
+
+    // Callback function
+    onSlideEnd: function(position, value) {}
+});
+
+</script>
+    <script>
+
+    $(document).ready(function () {
+        
+        statics.initcurrent();
+        statics.initslider();
+     setTimeout(function(){ 
+     
+     
+    $('.wq-drop-layer').removeClass("animated zoomIn");
+    $('.wq-drop-layer').addClass("animated zoomOut"); }, 2000);
+
+    });
+
+</script>
+
+</body>
+</html>
